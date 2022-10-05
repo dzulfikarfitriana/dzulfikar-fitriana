@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h2>Repo List</h2>
+    <h2>{{ this.$store.state.title }}</h2>
     <ul>
       <li v-for="(repo, index) in repos" :key="index">{{ repo.full_name }}</li>
     </ul>
@@ -24,7 +24,7 @@ export default {
       fetch('https://api.github.com/users/nuabdi310/repos')
       .then((response) => response.json())
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         this.repos = res
       });
 
